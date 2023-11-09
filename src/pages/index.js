@@ -5,10 +5,6 @@ import HeroImage from '../images/hero-img.svg'
 import Abg from '../images/iqBg.webp'
 import Layout from "../components/Layout"
 
-import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook'
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
-
-
 const IndexPage = () => {
   console.log("BgImage: ", BrainBulb);
   return (
@@ -39,7 +35,7 @@ const IndexPage = () => {
         <Box>
           <Text $align="center">Join Us &</Text>
           <Heading as="h2" $color="#eee">Boost your Crypto Knowledge</Heading>
-          <Text>follow</Text><span><FaFacebook /><FaTwitter /></span>
+          {/* <Text>follow</Text><span><FaFacebook /><FaTwitter /></span> */}
         </Box>
         <Box>
           <Image $rot="15deg" $width="250px" $height="auto" src={BrainBulb}/>
