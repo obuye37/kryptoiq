@@ -1,16 +1,14 @@
-
 import React from 'react'
 import styled from "styled-components"
 import { Link } from 'gatsby'
 
-const bgColor = '#111'
-const fgColor = '#eee'
-const colors = {
+export const theme = {
   primary: '#ffcc00',
   secondary: '#00A479',
-  lite: '#AFFDF5'
+  lite: '#AFFDF5',
+  bgColor: '#111',
+  fgColor: '#eee'
 }
-const fontFamily = 'Montserrat'
 
 export const Main = styled.main`
     display: flex;
@@ -18,7 +16,7 @@ export const Main = styled.main`
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    background-color: ${bgColor}
+    background-color: ${theme.bgColor}
 ` 
 
 // export const Description = styled.span`
@@ -45,6 +43,7 @@ export const Box = styled.div`
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: ${({$corners}) => $corners};
 `
 
 export const Logo = styled.img`
@@ -63,7 +62,7 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: center;
   width:100%;
-  gap:20px;
+  gap: ${props=>props.$gap};
   align-items: center;
   padding: 2rem;
   background-color: ${props=>props.$bgColor}
@@ -78,34 +77,32 @@ export const NavLink = styled(Link)`
             case 'xsm':
                 return `
                     margin: 0.6rem;
-                    font-size: 0.9rem;
-                    line-height: 1.5;
+                    font-size: x-small;
                 `
             case 'sm': 
                 return `
-                    font-size: 1.2rem;
-                    line-height: 2;
+                    font-size: small;
                 `
             case 'md': 
             return `
-                font-size: 2rem;
-                line-height: 2;
+                font-size: medium;
             `
             case 'lg': 
                 return`
-                    font-size: 3.5rem;
-                    line-height: 3;
+                    font-size: large;
                 `
             case 'xlg': 
                 return`
-                    font-size: 4rem;
-                    line-height: 3;
+                    font-size: x-large;
                 `
             case 'xxl': 
                 return`
-                    font-size: 5.5rem;
-                    line-height: 3;
+                    font-size: xx-large;
                 `
+            default:
+              return`
+                font-size:${$size}
+              `
         }
     }}
 
@@ -123,34 +120,27 @@ export const Elink = styled.a`
         switch($size){
             case 'xsm':
                 return `
-                    margin: 0.6rem;
-                    font-size: 0.9rem;
-                    line-height: 1.5;
+                    font-size: x-small;
                 `
             case 'sm': 
                 return `
-                    font-size: 1.2rem;
-                    line-height: 2;
+                    font-size: small;
                 `
             case 'md': 
             return `
-                font-size: 2rem;
-                line-height: 2;
+                font-size: medium;
             `
             case 'lg': 
                 return`
-                    font-size: 3.5rem;
-                    line-height: 3;
+                    font-size: large;
                 `
             case 'xlg': 
                 return`
-                    font-size: 4rem;
-                    line-height: 3;
+                    font-size: x-large;
                 `
             case 'xxl': 
                 return`
-                    font-size: 5.5rem;
-                    line-height: 3;
+                    font-size: xx-large;
                 `
         }
     }}
@@ -168,12 +158,13 @@ font-weight: ${({$bold, $heavy, $light}) => $bold && 600 ||
 export const Button = styled.button`
   color: ${props=>props.$color};
   background-color: ${props=>props.$bgColor};
-  ${({$small, $large, $xlarge }) =>     $small && `padding:0.5rem;` || 
-                                        $large && `width:210px; padding:0.5rem;`};
+  ${({ $small, $large }) =>     $small && `padding:0.5rem;` || 
+                                        $large && `width:150px; padding:0.5rem;`};
   margin:10px;
   text-align: center;
   border: none;
   border-radius: 5px;
+  font-size: ${({$size}) => $size || `1rem` };
 `
   
 //   /** .grid {
@@ -203,82 +194,84 @@ export const Button = styled.button`
 //   `
 
 export const Heading =  styled.div`
-text-align: ${({$center, $right, $left, $justify}) => 
-                                              $center && 'center' ||
-                                              $right && 'right' ||
-                                              $left && 'left' ||
-                                              $justify && 'justify'};
+text-align: ${({$align}) => $align || 'left'};
 background-color: ${props=>props.$bgColor};
 padding: ${props=>props.$pd};
 border-radius: 10px;
 ${({$italize}) => $italize && `font-style: italic`};
 color: ${props=>props.$color};
-${({ $sm, $lg, $xlg }) => {
-  switch(true){
-    case $sm:
+font-weight: ${props=>props.$weight};
+${({ $size }) => {
+  switch($size){
+    case 'sm':
       return `
-      font-size: 32px;
-      font-weight: 700;
+      font-size: small;
       `
-    case $lg:
+    case 'md':
       return `
-        font-size: 45px;
-        font-weight: 900;
+        font-size: medium;
       `
-    case $xlg:
+    case 'lg':
       return `
-        font-size: 60px;
-        font-weight: 1200;
+        font-size: large;
       `
-
+    case 'xlg':
+          return `
+            font-size: x-large;
+          `
+    case 'xxlg':
+    return `
+      font-size: xx-large;
+    `
+    default: 
+      return`
+        font-size:${$size};
+      `
   }
 }}
 `
 
 export const Text = styled.p`
-    font-weight: 300;
+    font-weight: ${({$weight})=>$weight || 400};
+    background-color: ${({$bgColor}) => $bgColor};
     color: ${props=>props.$color || '#333' };
     width: ${props=>props.$width};
     opacity: ${props=>props.$opacity || 'none'};
     text-align: ${props => props.$align || 'left'};
     ${({$italize}) => $italize && `font-style: italic`};
-    /* font-weight: ${({$bold, $heavy, $light}) => $bold && 600 || 
-                                            $heavy && 900 || 
-                                            $light && 400 }; */
+    padding: ${props=>props.$pd};
 
     ${({$size}) => {
         switch($size){
             case 'xsm':
                 return `
                     margin: 0.6rem;
-                    font-size: 0.9rem;
-                    line-height: 1.5;
+                    font-size: x-small;
                 `
             case 'sm': 
                 return `
-                    font-size: 1rem;
-                    line-height: 2;
+                    font-size: small;
                 `
             case 'md': 
             return `
-                font-size: 2rem;
-                line-height: 2;
+                font-size: medium;
             `
             case 'lg': 
                 return`
-                    font-size: 3.5rem;
-                    line-height: 3;
+                    font-size: large;
                 `
             case 'xlg': 
                 return`
-                    font-size: 4rem;
-                    line-height: 3;
+                    font-size: x-large;
                 `
-            case 'xxl': 
+            case 'xxlg': 
                 return`
-                    font-size: 5.5rem;
-                    line-height: 3;
+                    font-size: xx-large;
                 `
+            default:
+              return `
+                font-size: ${$size};
+              `
         }
     }}
     `

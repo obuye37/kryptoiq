@@ -1,5 +1,5 @@
 import React from 'react'
-import LogoImg from '../images/logo.png'
+import LogoImg from '../images/kiqlogo_dark.png'
 import { Navbar, NavLink, Logo, Box } from './Styled'
 // import { FaTwitter, FaTelegram } from 'react-icons/fa'
 
@@ -29,13 +29,13 @@ const links = [
 
 function Navigation() {
   return (
-        <Navbar $bgColor="#eee">
+        <Navbar $gap="40px" $bgColor="#eee">
             <Box $flex $jc='flex-end'>
               <Logo width={500} height={100} src={LogoImg} alt='kryptoiq logo with name' />
             </Box>
             <Box $flex $jc="flex-start" $gap="20px">
               {links.map(({url, text}, idx) => (
-                <NavLink $heavy $color="#000" key={idx} to={url}>{text}</NavLink>
+                <NavLink $size="lg" $heavy $color="#000" key={idx} to={url}>{text}</NavLink>
                 ))
               }
             </Box>

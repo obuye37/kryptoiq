@@ -1,15 +1,20 @@
 import React from 'react'
-import { Main, } from './Styled'
+import { Main, theme, } from './Styled'
 import Navigation from './Navigation'
 import Footer from './Footer'
+import { ThemeProvider } from 'styled-components'
+
 
 const Layout = ({children}) => {
   return (
-    <Main>
-        <Navigation />
-        {children}
-        <Footer />
-    </Main>
+    <ThemeProvider theme={theme}>
+        <Main>
+            <Navigation />
+            {children}
+            <Footer />
+        </Main>
+    </ThemeProvider>
+    
   )
 }
 
