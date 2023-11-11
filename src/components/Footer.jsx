@@ -14,7 +14,7 @@ const Footer = () => {
         </Box>
         <Box $flex $w='100%' $gap="10px" $ai="center" $jc="flex-end" $pd="2rem 8rem" $color='eee'>
             <Elink href='https://x.com/kryptoiq'><FaTwitter size={20} color={light.bgColor} /></Elink>
-            <Elink href='https://tg.me/kryptoiq'><FaTelegram size={20} color={light.bgColor}/></Elink>
+            <Elink href='https://t.me/kryptoiq_official'><FaTelegram size={20} color={light.bgColor}/></Elink>
         </Box>
     </Box>
   )

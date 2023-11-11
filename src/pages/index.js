@@ -20,7 +20,6 @@ const IndexPage = () => {
 const Home = () => {
   const themed = useTheme();
   const { light, dark } = themed;
-  console.log("dark: ", dark)
   return (
     <>
       <Box $flex $pd="8rem 5rem" $bgColor={light.bgColor} $w="100%">
@@ -52,7 +51,7 @@ const Home = () => {
           <Box $flex $jc="center" $ai="center" $gap="10px">
             <Text $size="lg" $align="center" style={{borderBottom: `1px solid ${light.secondary}`,}}>follow </Text>
             <Icons $flex $ai="center">
-              <Elink href="https://tg.me/kryptoiq"><FaTelegram size={20} color="#eee" /></Elink>
+              <Elink href="https://t.me/kryptoiq_official"><FaTelegram size={20} color="#eee" /></Elink>
               <Elink href="https://x.com/kryptoiq"><FaTwitter size={20} color="#eee"/></Elink>
             </Icons>
           </Box>

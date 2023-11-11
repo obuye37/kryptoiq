@@ -25,7 +25,7 @@ const ContactsPage = () => {
 
         <Box $flex>
           <FaTelegram size={80} color='#0088cc'/>
-          <Elink $italize href='t.me/krypto_iq_official' $size="xxlg" $color={light.fgColor}>t.me/krypto_iq_official</Elink>
+          <Elink $italize href='https://t.me/kryptoiq_official' $size="xxlg" $color={light.fgColor}>t.me/krypto_iq_official</Elink>
         </Box>
         <Box $flex $ai="center">
           <FaEnvelope size={80} color='#00accc' />
