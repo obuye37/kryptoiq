@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
 
 const fg="#000"
 const bg="#fff"
@@ -26,7 +27,7 @@ export const theme = {
   
 }
 
-export const Main = styled.main`
+export const Main = styled(motion.main)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;

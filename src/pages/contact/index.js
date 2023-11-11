@@ -1,24 +1,27 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import { Elink, Box, Heading } from '../components/Styled'
 import { useTheme } from 'styled-components'
 import { FaEnvelope, FaTelegram, FaTwitter } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+
+import Layout from '../../components/Layout'
+import { Elink, Box, Heading } from '../../components/Styled'
+
+
+// const Contacts = () => {
+//   return (
+//     <Layout>
+//       <ContactsPage />
+//     </Layout>
+//   )
+// }
 
 const Contacts = () => {
-  return (
-    <Layout>
-      <ContactsPage />
-    </Layout>
-  )
-}
-
-const ContactsPage = () => {
   const themed = useTheme();
   const { light, dark } = themed;
   return (
     <>
       <Box $flex $fd="column" $gap="2rem" $pd="8rem 1rem">
-        <Box $flex>
+        <Box as={motion.div} $flex>
           <FaTwitter  size={80} color='#00acee' />
           <Elink $italize href='https://x.com/kryptoiq' $color={light.fgColor} $size="xxlg">x.com/kryptoiq</Elink>
         </Box>

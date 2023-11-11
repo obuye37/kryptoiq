@@ -8,16 +8,16 @@ import Abg from '../images/iqBg.webp'
 import Layout from "../components/Layout"
 import { useTheme } from "styled-components"
 
+// const IndexPage = () => {
+//   return (
+//     <Layout>
+//       <Home />
+//     </Layout>
+//   )
+// }
+
+
 const IndexPage = () => {
-  return (
-    <Layout>
-      <Home />
-    </Layout>
-  )
-}
-
-
-const Home = () => {
   const themed = useTheme();
   const { light, dark } = themed;
   return (

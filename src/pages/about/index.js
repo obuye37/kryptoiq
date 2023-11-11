@@ -1,23 +1,24 @@
 import React from 'react'
-import Layout from '../components/Layout'
 import { useTheme } from 'styled-components'
 
-import HeroImage from '../images/iqBg.webp'
-import BrainBulb from '../images/iqbrain.svg'
+
+import Layout from '../../components/Layout'
+import HeroImage from '../../images/iqBg.webp'
+import BrainBulb from '../../images/iqbrain.svg'
 
 import { FaTwitter, FaFacebook, FaTelegram } from 'react-icons/fa'
-import { Box, Heading, Text, Button, Image, theme, Icons, Elink } from '../components/Styled'
+import { Box, Heading, Text, Button, Image, theme, Icons, Elink } from '../../components/Styled'
 
+
+// const About = () => {
+//   return (
+//     <Layout>
+//       <AboutPage />
+//     </Layout>
+//   )
+// }
 
 const About = () => {
-  return (
-    <Layout>
-      <AboutPage />
-    </Layout>
-  )
-}
-
-const AboutPage = () => {
   const themed = useTheme();
   const { light, dark } = themed;
   return (
@@ -37,7 +38,7 @@ const AboutPage = () => {
         </Box>
 
         {/* Join Section */}
-      <Box $flex $pd="8rem" $ai="center" $bgColor="black">
+      <Box $flex $pd="10rem 8rem 12rem 8rem" $ai="center" $bgColor="black">
         <Box>
           <Text $align="center" $size="xxlg">Join Us &</Text>
           <Heading $align="center" $color="#eee" $weight="900" $size='4rem'>Boost your Crypto Knowledge</Heading>
@@ -56,7 +57,7 @@ const AboutPage = () => {
       </Box>
 
         {/* How it Works Section */}
-      <Box $bgColor={light.bgColor} $pd="4rem" className="top-divider">
+      <Box style={{position:'relative'}} $bgColor={light.bgColor} $pd="4rem" className="top-divider">
         <Heading as='h1' $align="center" $size='4rem'  $pd="2rem">How it Works</Heading>
         <Box $w="100%" $flex style={{flexWrap:'wrap'}}>
           <Box $w="50%" $pd="4rem"  >

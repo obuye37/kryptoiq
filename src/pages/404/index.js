@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Text } from "../components/Styled"
+import { Text } from "../../components/Styled"
 
 const pageStyles = {
   color: "#232129",

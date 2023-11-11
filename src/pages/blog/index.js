@@ -1,18 +1,18 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import { Heading } from '../components/Styled'
+import Layout from '../../components/Layout'
+import { Heading } from '../../components/Styled'
 import { useTheme } from 'styled-components'
 
 
-const Blog = () => {
-  return (
-    <Layout>
-      <BlogPage />
-    </Layout>
-  )
-}
+// const Blog = () => {
+//   return (
+//     <Layout>
+//       <BlogPage />
+//     </Layout>
+//   )
+// }
 
-const BlogPage = () => {
+const Blog = () => {
   const themed = useTheme();
   const { light, dark } = themed;
   return (
