@@ -1,12 +1,22 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { Heading } from '../components/Styled'
+import { useTheme } from 'styled-components'
+
 
 const Blog = () => {
   return (
     <Layout>
-      <Heading $size="xxlg" $color="white">Blog Page Under Construction</Heading>
+      <BlogPage />
     </Layout>
+  )
+}
+
+const BlogPage = () => {
+  const themed = useTheme();
+  const { light, dark } = themed;
+  return (
+      <Heading $size="xxlg" $color={dark.bgColor}>Blog Page Under Construction</Heading>
   )
 }
 

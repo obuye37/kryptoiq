@@ -1,13 +1,22 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { Heading } from '../components/Styled'
+import { useTheme } from 'styled-components'
 
 
 const Litepaper = () => {
   return (
     <Layout>
-      <Heading $size="xxlg" $color="white">Litepaper Page Under Construction</Heading>
+      <LitepaperPage />
     </Layout>
+  )
+}
+
+const LitepaperPage = () => {
+  const themed = useTheme();
+  const { light, dark } = themed;
+  return (
+      <Heading $size="xxlg" $color={dark.bgColor}>Litepaper Page Under Construction</Heading>
   )
 }
 
