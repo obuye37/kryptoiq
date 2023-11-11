@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { Text } from "../components/Styled"
 
 const pageStyles = {
   color: "#232129",
@@ -27,7 +28,7 @@ const NotFoundPage = () => {
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
+      <Text style={paragraphStyles}>
         Sorry 😔, we couldn’t find what you were looking for.
         <br />
         {process.env.NODE_ENV === "development" ? (
@@ -39,7 +40,7 @@ const NotFoundPage = () => {
         ) : null}
         <br />
         <Link to="/">Go home</Link>.
-      </p>
+      </Text>
     </main>
   )
 }

@@ -1,22 +1,29 @@
 import * as React from "react"
-import { useTheme } from "styled-components"
+import { FaTwitter, FaFacebook, FaTelegram } from 'react-icons/fa'
 
-import { Box, Heading, Text, Button, Image, theme } from '../components/Styled'
+import { Box, Heading, Text, Button, Image, theme, Icons, Elink } from '../components/Styled'
 import BrainBulb from '../images/iqbrain.svg'
 import HeroImage from '../images/hero-img.svg'
 import Abg from '../images/iqBg.webp'
 import Layout from "../components/Layout"
-
+import { useTheme } from "styled-components"
 
 const IndexPage = () => {
-
-  // const colors = useTheme();
-
-  // const { primary, secondary, lite, bgColor, fgColor } = colors
-// console.log("color: ", primary)
   return (
     <Layout>
-      <Box $flex $pd="8rem 5rem" $bgColor="#eee" $w="100%">
+      <Home />
+    </Layout>
+  )
+}
+
+
+const Home = () => {
+  const themed = useTheme();
+  const { light, dark } = themed;
+  console.log("dark: ", dark)
+  return (
+    <>
+      <Box $flex $pd="8rem 5rem" $bgColor={light.bgColor} $w="100%">
         <Box $pd="2rem 8rem">
           <Text $size='xlg' $heavy>Welcome to Krypto IQ</Text>
           <Heading $size="4rem" $weight={900} $xlg $italize>Learn and Earn in a Fun Way</Heading>
@@ -31,26 +38,34 @@ const IndexPage = () => {
     <Box $flex $bgImage={`${Abg}`} $w="100%" $ai='center' style={{position:'relative'}}>
       <div style={{position:"absolute", background:'#000c', width:'100%', height:'100%'}}></div>
       <Box $flex $fd="column" $pd="10rem" $ai='center' $w="80%" $mg="auto" style={{zIndex: 1000}}>
-        <Heading $size='5rem' $color='#eee'> Krypto <Text as='span' $color='yellow' $size="xxlg" weight={900}>IQ</Text></Heading>
+        <Heading $size='5rem' $color='#eee'> Krypto <Text as='span' $color='yellow' $size="5rem" weight={900}>IQ</Text></Heading>
         <Text $align="center" $size="lg" $color='#eee' $width="70%">We are here to help you make money while you are catching all the fun on this exciting crypto space</Text>
         <Button $large $size="1.5rem" $bgColor='yellow' $color='#111'> Learn More... </Button>
       </Box>
     </Box>
 
       {/* Join Section */}
-      <Box $flex $pd="8rem" $ai="center">
+      <Box $flex $pd="8rem" $ai="center" $bgColor="black">
         <Box>
-          <Text $align="center">Join Us &</Text>
-          <Heading as="h2" $color="#eee" $size="xlg">Boost your Crypto Knowledge</Heading>
-          {/* <Text>follow</Text><span><FaFacebook /><FaTwitter /></span> */}
+          <Text $align="center" $size="xxlg">Join Us &</Text>
+          <Heading $align="center" $color="#eee" $weight="900" $size='4rem'>Boost your Crypto Knowledge</Heading>
+          <Box $flex $jc="center" $ai="center" $gap="10px">
+            <Text $size="lg" $align="center" style={{borderBottom: `1px solid ${light.secondary}`,}}>follow </Text>
+            <Icons $flex $ai="center">
+              <Elink href="https://tg.me/kryptoiq"><FaTelegram size={20} color="#eee" /></Elink>
+              <Elink href="https://x.com/kryptoiq"><FaTwitter size={20} color="#eee"/></Elink>
+            </Icons>
+          </Box>
         </Box>
+        
         <Box>
           <Image $rot="15deg" $width="250px" $height="auto" src={BrainBulb}/>
         </Box>
       </Box>
 
+      {/* How it Works Section */}
       <Box $bgColor='#ffcc00' $pd="4rem">
-        <Heading $align="center" $size='6rem' as='h1' $pd="2rem">How it Works</Heading>
+        <Heading as='h1' $align="center" $size='4rem'  $pd="2rem">How it Works</Heading>
         <Box $w="100%" $flex style={{flexWrap:'wrap'}}>
           <Box $w="50%" $pd="4rem"  >
             <Box $w='25%' $pd=".2rem 1rem" $corners="5px" $bgColor="#c9a100">
@@ -78,7 +93,7 @@ const IndexPage = () => {
           </Box>
         </Box>
       </Box>
-    </Layout>
+    </>
   )
 }
 

@@ -2,12 +2,28 @@ import React from 'react'
 import styled from "styled-components"
 import { Link } from 'gatsby'
 
+const fg="#000"
+const bg="#fff"
+const secondary="#00A479"
+const primary = '#ffcc00'
+const lite = '#AFFDF5'
+
 export const theme = {
-  primary: '#ffcc00',
-  secondary: '#00A479',
-  lite: '#AFFDF5',
-  bgColor: '#111',
-  fgColor: '#eee'
+  light : {
+    primary: secondary,
+    secondary: primary,
+    lite,
+    bgColor: bg,
+    fgColor: fg,
+  },
+  dark : {
+    primary,
+    secondary,
+    lite,
+    bgColor: fg,
+    fgColor: bg,
+  }
+  
 }
 
 export const Main = styled.main`
@@ -38,11 +54,14 @@ export const Box = styled.div`
   gap: ${props => props?.$gap};
   padding:${props=>props.$pd};
   margin: ${props=>props.$mg};
+  ${({$bgImage})=>
+    $bgImage && `
+    background-image: url(${$bgImage});
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    `}
   background-color: ${props=>props.$bgColor};
-  background-image: url(${props => props.$bgImage});
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
   border-radius: ${({$corners}) => $corners};
 `
 
@@ -113,6 +132,9 @@ font-weight: ${({$bold, $heavy, $light}) => $bold && 600 ||
 `
 
 export const Elink = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
     color: ${props=>props.$color};
     text-decoration: none;
@@ -151,9 +173,16 @@ font-weight: ${({$bold, $heavy, $light}) => $bold && 600 ||
 
 `
   
-//   export const Code = styled.code`
-//     font-weight: 700;
-// `
+export const Icons = styled.span`
+    font-weight: 700;
+    display: ${({$grid, $flex}) => $grid && 'grid' || $flex && 'flex' || null};
+    justify-content: ${({$jc})=> $jc || "center"};
+    align-items: ${({$ai})=> $ai || "center"};
+    gap:${({$gap})=> $gap || '10px'};
+    padding: ${props=>props.$pd};
+    background-color: ${({$bgColor})=>$bgColor || "transparent"};
+    color: ${({$color})=>$color || "#eee"};
+`
 
 export const Button = styled.button`
   color: ${props=>props.$color};

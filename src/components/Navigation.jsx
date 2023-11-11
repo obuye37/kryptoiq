@@ -1,6 +1,6 @@
 import React from 'react'
 import LogoImg from '../images/kiqlogo_dark.png'
-import { Navbar, NavLink, Logo, Box } from './Styled'
+import { Navbar, NavLink, Logo, Box, theme } from './Styled'
 // import { FaTwitter, FaTelegram } from 'react-icons/fa'
 
 const links = [
@@ -33,10 +33,18 @@ function Navigation() {
             <Box $flex $jc='flex-end'>
               <Logo width={500} height={100} src={LogoImg} alt='kryptoiq logo with name' />
             </Box>
-            <Box $flex $jc="flex-start" $gap="20px">
-              {links.map(({url, text}, idx) => (
-                <NavLink $size="lg" $heavy $color="#000" key={idx} to={url}>{text}</NavLink>
-                ))
+            <Box $flex $ai="center" $jc="flex-start" $gap="20px">
+              {links.map(({url, text}, idx) => {
+                switch(text){
+                  case "Litepaper":
+                    return (
+                    <Box $flex $jc="center" $ai="center" $bgColor={theme.dark.primary} $pd="5px" $corners="5px">
+                      <NavLink $size="lg" $thin $color={theme.dark.secondary} key={idx} to={url}>{text}</NavLink>
+                    </Box>)
+
+                  default: 
+                  return <NavLink $size="lg" $heavy $color="#000" key={idx} to={url}>{text}</NavLink>
+                }})
               }
             </Box>
             {/* <Box flex gap='20px' w="20%" jc="center">

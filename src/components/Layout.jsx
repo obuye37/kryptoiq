@@ -7,13 +7,14 @@ import { ThemeProvider } from 'styled-components'
 
 const Layout = ({children}) => {
   return (
-    <ThemeProvider theme={theme}>
         <Main>
-            <Navigation />
-            {children}
-            <Footer />
+            <ThemeProvider theme={theme}>
+                <Navigation />
+                {children}
+                <Footer />
+            </ThemeProvider>
         </Main>
-    </ThemeProvider>
+    
     
   )
 }
