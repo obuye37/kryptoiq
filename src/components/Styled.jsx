@@ -91,6 +91,7 @@ export const NavLink = styled(Link)`
     padding: 5px;
     color: ${props=>props.$color};
     text-decoration: none;
+    ${({$italize}) => $italize && `font-style: italic`};
     ${({$size}) => {
         switch($size){
             case 'xsm':
@@ -138,6 +139,7 @@ export const Elink = styled.a`
     padding: 5px;
     color: ${props=>props.$color};
     text-decoration: none;
+    ${({$italize}) => $italize && `font-style: italic`};
     ${({$size}) => {
         switch($size){
             case 'xsm':
@@ -160,7 +162,7 @@ export const Elink = styled.a`
                 return`
                     font-size: x-large;
                 `
-            case 'xxl': 
+            case 'xxlg': 
                 return`
                     font-size: xx-large;
                 `

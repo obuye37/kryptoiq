@@ -1,7 +1,8 @@
 import React from 'react'
 import LogoImg from '../images/kiqlogo_dark.png'
-import { Navbar, NavLink, Logo, Box, theme } from './Styled'
-// import { FaTwitter, FaTelegram } from 'react-icons/fa'
+import { Navbar, NavLink, Logo, Box, Elink } from './Styled'
+import { useTheme } from 'styled-components'
+import { FaTwitter, FaTelegram } from 'react-icons/fa'
 
 const links = [
   {
@@ -28,8 +29,10 @@ const links = [
 
 
 function Navigation() {
+  const themed = useTheme();
+  const { light, dark } = themed;
   return (
-        <Navbar $gap="40px" $bgColor="#eee">
+        <Navbar $w="100%" $gap="40px" $bgColor={light.bgColor}>
             <Box $flex $jc='flex-end'>
               <Logo width={500} height={100} src={LogoImg} alt='kryptoiq logo with name' />
             </Box>
@@ -38,8 +41,8 @@ function Navigation() {
                 switch(text){
                   case "Litepaper":
                     return (
-                    <Box $flex $jc="center" $ai="center" $bgColor={theme.dark.primary} $pd="5px" $corners="5px">
-                      <NavLink $size="lg" $thin $color={theme.dark.secondary} key={idx} to={url}>{text}</NavLink>
+                    <Box $flex $jc="center" $ai="center" $bgColor={dark.primary} $pd="5px" $corners="5px">
+                      <NavLink $size="lg" $thin $color={dark.secondary} key={idx} to={url}>{text}</NavLink>
                     </Box>)
 
                   default: 
@@ -47,10 +50,10 @@ function Navigation() {
                 }})
               }
             </Box>
-            {/* <Box flex gap='20px' w="20%" jc="center">
-              <Link href={'/'}><FaTwitter /></Link>
-              <Link href={'/'}><FaTelegram /></Link>
-            </Box> */}
+            <Box $flex $gap='20px' $w="5%" $jc="flex-end">
+              <Elink href={'https://x.com/kryptoiq'}><FaTwitter size={20} color={dark.bgColor}/></Elink>
+              <Elink href={'https://t.me/krypto_iq_official'}><FaTelegram size={20} color={dark.bgColor}/></Elink>
+            </Box>
         </Navbar>
   )
 }

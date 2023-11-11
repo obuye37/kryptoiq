@@ -10,3 +10,58 @@
     font-family: Poppins, sans-serif, monospace;
     font-weight: 400;
 }
+
+.aboutFloatsBox::before {
+    content: '';
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+    background-color: #00a47881;
+    margin: auto;
+    top: 0;
+    bottom:0;
+    left: 18rem;
+    z-index: 10;
+    border-radius: 3rem;
+    transform: rotate(-5deg);
+}
+
+.aboutFloatsBox::after{
+    content: '';
+    border-radius: 3rem;
+    height: 25rem;
+    width: 25rem;
+    position: absolute;
+    background-color: #00a47881;
+    margin: auto;
+    top: 0;
+    bottom:0;
+    right: 18rem;
+    z-index: 10;
+    transform: rotate(-5deg);
+}
+
+.aboutFloatLines{
+    border-radius: 10px;
+    position:absolute;
+    width:6rem;
+    height:27rem;
+    transform: rotate(10deg);
+    /* z-index: 10; */
+    margin:auto;
+}
+
+.top-divider::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    top:-6rem;
+    right:0;
+    left:0;
+    border-style: solid;
+    border-color: #fff;
+    border-width:  3rem;
+    transform:skewY(2deg);
+    transform-origin: left;
+    z-index: 10;
+}
