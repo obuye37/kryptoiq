@@ -10,14 +10,6 @@ import { FaTwitter, FaFacebook, FaTelegram } from 'react-icons/fa'
 import { Box, Heading, Text, Button, Image, theme, Icons, Elink } from '../../components/Styled'
 
 
-// const About = () => {
-//   return (
-//     <Layout>
-//       <AboutPage />
-//     </Layout>
-//   )
-// }
-
 const About = () => {
   const themed = useTheme();
   const { light, dark } = themed;

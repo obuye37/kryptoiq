@@ -5,16 +5,7 @@ import { Box, Heading, Text, Button, Image, theme, Icons, Elink } from '../compo
 import BrainBulb from '../images/iqbrain.svg'
 import HeroImage from '../images/hero-img.svg'
 import Abg from '../images/iqBg.webp'
-import Layout from "../components/Layout"
 import { useTheme } from "styled-components"
-
-// const IndexPage = () => {
-//   return (
-//     <Layout>
-//       <Home />
-//     </Layout>
-//   )
-// }
 
 
 const IndexPage = () => {

@@ -1,16 +1,7 @@
 import React from 'react'
-import Layout from '../../components/Layout'
 import { Heading } from '../../components/Styled'
 import { useTheme } from 'styled-components'
 
-
-// const Litepaper = () => {
-//   return (
-//     <Layout>
-//       <LitepaperPage />
-//     </Layout>
-//   )
-// }
 
 const Litepaper = () => {
   const themed = useTheme();
