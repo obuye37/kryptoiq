@@ -7,7 +7,7 @@ const Litepaper = () => {
   const themed = useTheme();
   const { light, dark } = themed;
   return (
-      <Heading $size="xxlg" $color={dark.bgColor}>Litepaper Page Under Construction</Heading>
+      <Heading $size="xxlg" $color={dark.bgColor}>Litepaper Page is Under Construction</Heading>
   )
 }
 
