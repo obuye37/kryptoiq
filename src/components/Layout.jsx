@@ -1,7 +1,6 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-
-import { Main, theme, } from './Styled'
+import { motion } from 'framer-motion'
+import { Main } from './Styled'
 import Navigation from './Navigation'
 import Footer from './Footer'
 
@@ -12,33 +11,33 @@ const variants = {
   },
   animatedState: {
     opacity: 1,
-    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%);",
   },
   exitState : {
-    clipPath: "polygon(60% 0, 60% 0, 40% 100%, 40% 100%)",
+    clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
   }
 }
 
-const Layout = ({children}) => {
+const Layout = ({ children, path}) => {
+
+  console.log("path: ", path)
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Navigation />
-      <Main
+      <Main>
+        <motion.div key={path}
         variants={variants}
         initial="initialState"
         animate="animatedState"
         exit="exitState"
         transition={{
-          type:"spring",
-          mass:0.35,
-          stiffness:75,
-          duration:0.95
-        }}
-      >
+          duration:0.75
+        }}>
           {children}
+        </motion.div>
       </Main>
       <Footer />
-    </ThemeProvider>
+    </>
         
     
     

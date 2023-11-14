@@ -1,12 +1,10 @@
 import React from 'react'
-import { Box, Elink } from './Styled'
+import { Box, Elink, theme } from './Styled'
 import LogoImg from '../images/kiqlogo_dark.png'
 import {FaTwitter, FaTelegram } from "react-icons/fa"
-import { useTheme } from 'styled-components'
 
 const Footer = () => {
-    const themed = useTheme();
-    const { light, dark } = themed;
+    const { light, dark } = theme;
   return (
     <Box as="footer" $w="100%" $flex  $bgColor={light.fgColor} $gap="10px">
         <Box $pd="3rem" width="100%">

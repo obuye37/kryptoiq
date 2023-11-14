@@ -27,7 +27,7 @@ export const theme = {
   
 }
 
-export const Main = styled(motion.main)`
+export const Main = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: space-between;

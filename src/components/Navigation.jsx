@@ -1,7 +1,6 @@
 import React from 'react'
 import LogoImg from '../images/kiqlogo_dark.png'
-import { Navbar, NavLink, Logo, Box, Elink } from './Styled'
-import { useTheme } from 'styled-components'
+import { Navbar, NavLink, Logo, Box, Elink, theme } from './Styled'
 import { FaTwitter, FaTelegram } from 'react-icons/fa'
 
 const links = [
@@ -29,8 +28,7 @@ const links = [
 
 
 function Navigation() {
-  const themed = useTheme();
-  const { light, dark } = themed;
+  const { light, dark } = theme;
   return (
         <Navbar $w="100%" $gap="40px" $bgColor={light.bgColor}>
             <Box $flex $jc='flex-end'>
@@ -41,8 +39,8 @@ function Navigation() {
                 switch(text){
                   case "Litepaper":
                     return (
-                    <Box $flex $jc="center" $ai="center" $bgColor={dark.primary} $pd="5px" $corners="5px">
-                      <NavLink $size="lg" $thin $color={dark.secondary} key={idx} to={url}>{text}</NavLink>
+                    <Box $flex $jc="center" $ai="center" $bgColor={dark.primary} $pd="5px" $corners="5px" key={idx}>
+                      <NavLink $size="lg" $thin $color={dark.secondary}  to={url}>{text}</NavLink>
                     </Box>)
 
                   default: 

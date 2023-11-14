@@ -3,7 +3,7 @@ import { FaEnvelope, FaTelegram, FaTwitter } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 
-import { Elink, Box, Heading, theme } from '../../components/Styled'
+import { Elink, Box, theme } from '../../components/Styled'
 
 
 const Contacts = () => {
