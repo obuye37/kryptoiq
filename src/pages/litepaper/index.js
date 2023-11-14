@@ -1,10 +1,11 @@
 import React from 'react'
-import { Heading } from '../../components/Styled'
+import { Heading, theme} from '../../components/Styled'
 
 
 const Litepaper = () => {
+  const { light, dark } = theme;
   return (
-      <Heading $size="xxlg" $color="#000">Litepaper Page is Under Construction</Heading>
+      <Heading $size="xxlg" $color={dark.bgColor}>Litepaper Page is Under Construction</Heading>
   )
 }
 
