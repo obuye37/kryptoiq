@@ -1,10 +1,18 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
 
+@media screen and (max-width: 640px) {
+    *{
+        font-size: 10px;
+    }
+}
 
+body {
+    background-color: #111;
+}
 
 * {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, sans-serif, monospace;
@@ -64,4 +72,28 @@
     transform:skewY(2deg);
     transform-origin: left;
     z-index: 10;
+}
+
+.clip-bottom-right-slant{
+    clip-path: polygon(0 0, 100% 0%, 100% 95%, 0% 100%);
+}
+
+.clip-bottom-left-slant{
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+}
+
+.clip-top-right-slant {
+    clip-path: polygon(0 100%, 100% 10%, 100% 100%, 0 100%);
+}
+
+.clip-top-left-slant {
+    clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.hero-slant {
+    clip-path: polygon(0 0, 100% 0%, 100% 93%, 50% 98%, 0 93%);
+}
+
+.hero-slant-2 {
+    clip-path: polygon(0 0, 100% 0%, 100% 95%, 50% 100%, 0 95%);
 }

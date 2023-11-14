@@ -98,27 +98,27 @@ export const NavLink = styled(Link)`
             case 'xsm':
                 return `
                     margin: 0.6rem;
-                    font-size: x-small;
+                    font-size: 0.4rem;
                 `
             case 'sm': 
                 return `
-                    font-size: small;
+                    font-size: 0.8rem;
                 `
             case 'md': 
             return `
-                font-size: medium;
+                font-size: 1rem;
             `
             case 'lg': 
                 return`
-                    font-size: large;
+                    font-size: 1.5rem;
                 `
             case 'xlg': 
                 return`
-                    font-size: x-large;
+                    font-size: 2.5rem;
                 `
-            case 'xxl': 
+            case 'xxlg': 
                 return`
-                    font-size: xx-large;
+                    font-size: 3rem;
                 `
             default:
               return`
@@ -145,28 +145,33 @@ export const Elink = styled.a`
         switch($size){
             case 'xsm':
                 return `
-                    font-size: x-small;
+                    margin: 0.6rem;
+                    font-size: 0.4rem;
                 `
             case 'sm': 
                 return `
-                    font-size: small;
+                    font-size: 0.8rem;
                 `
             case 'md': 
             return `
-                font-size: medium;
+                font-size: 1rem;
             `
             case 'lg': 
                 return`
-                    font-size: large;
+                    font-size: 1.5rem;
                 `
             case 'xlg': 
                 return`
-                    font-size: x-large;
+                    font-size: 2.5rem;
                 `
             case 'xxlg': 
                 return`
-                    font-size: xx-large;
+                    font-size: 3rem;
                 `
+            default:
+              return`
+                font-size:${$size}
+              `
         }
     }}
 
@@ -233,34 +238,39 @@ border-radius: 10px;
 ${({$italize}) => $italize && `font-style: italic`};
 color: ${props=>props.$color};
 font-weight: ${props=>props.$weight};
-${({ $size }) => {
-  switch($size){
-    case 'sm':
-      return `
-      font-size: small;
-      `
-    case 'md':
-      return `
-        font-size: medium;
-      `
-    case 'lg':
-      return `
-        font-size: large;
-      `
-    case 'xlg':
-          return `
-            font-size: x-large;
-          `
-    case 'xxlg':
-    return `
-      font-size: xx-large;
-    `
-    default: 
-      return`
-        font-size:${$size};
-      `
-  }
-}}
+${({$size}) => {
+        switch($size){
+            case 'xsm':
+                return `
+                    margin: 0.6rem;
+                    font-size: 0.4rem;
+                `
+            case 'sm': 
+                return `
+                    font-size: 0.8rem;
+                `
+            case 'md': 
+            return `
+                font-size: 1rem;
+            `
+            case 'lg': 
+                return`
+                    font-size: 1.5rem;
+                `
+            case 'xlg': 
+                return`
+                    font-size: 2.5rem;
+                `
+            case 'xxlg': 
+                return`
+                    font-size: 3rem;
+                `
+            default:
+              return`
+                font-size:${$size}
+              `
+        }
+    }}
 `
 
 export const Text = styled.p`
@@ -278,31 +288,31 @@ export const Text = styled.p`
             case 'xsm':
                 return `
                     margin: 0.6rem;
-                    font-size: x-small;
+                    font-size: 0.4rem;
                 `
             case 'sm': 
                 return `
-                    font-size: small;
+                    font-size: 0.8rem;
                 `
             case 'md': 
             return `
-                font-size: medium;
+                font-size: 1rem;
             `
             case 'lg': 
                 return`
-                    font-size: large;
+                    font-size: 1.5rem;
                 `
             case 'xlg': 
                 return`
-                    font-size: x-large;
+                    font-size: 2.5rem;
                 `
             case 'xxlg': 
                 return`
-                    font-size: xx-large;
+                    font-size: 3rem;
                 `
             default:
-              return `
-                font-size: ${$size};
+              return`
+                font-size:${$size}
               `
         }
     }}

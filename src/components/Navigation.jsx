@@ -39,12 +39,12 @@ function Navigation() {
                 switch(text){
                   case "Litepaper":
                     return (
-                    <Box $flex $jc="center" $ai="center" $bgColor={dark.primary} $pd="5px" $corners="5px" key={idx}>
-                      <NavLink $size="lg" $thin $color={dark.secondary}  to={url}>{text}</NavLink>
+                    <Box $flex $jc="center" $ai="center" $bgColor={dark.secondary} $pd="5px" $corners="5px" key={idx}>
+                      <NavLink $size="md" $thin $color={dark.fgColor}  to={url}>{text}</NavLink>
                     </Box>)
 
                   default: 
-                  return <NavLink $size="lg" $heavy $color="#000" key={idx} to={url}>{text}</NavLink>
+                  return <NavLink $size="md" $heavy $color="#000" key={idx} to={url}>{text}</NavLink>
                 }})
               }
             </Box>
