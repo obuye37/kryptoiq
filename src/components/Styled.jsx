@@ -27,12 +27,13 @@ export const theme = {
   
 }
 
-export const Main = styled.main`
+export const Main = styled(motion.main)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
+    width: inherit;
     background-color: ${theme.bgColor}
 ` 
 
@@ -52,14 +53,15 @@ export const Box = styled.div`
   justify-content: ${props => props.$jc};
   align-items: ${props => props.$ai};
   width: ${props => props.$w};
+  ${({$square}) => $square && `height: ${$square}; width:${$square}`};
   gap: ${props => props?.$gap};
   padding:${props=>props.$pd};
   margin: ${props=>props.$mg};
   ${({$bgImage})=>
     $bgImage && `
     background-image: url(${$bgImage});
-    background-position: top;
-    background-size: cover;
+    background-position: ${({$bgPos})=> $bgPos || 'center'};
+    background-size: ${({$bgSize})=> $bgSize || 'cover'};
     background-repeat: no-repeat;
     `}
   background-color: ${props=>props.$bgColor};

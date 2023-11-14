@@ -9,9 +9,8 @@ import { Elink, Box, theme } from '../../components/Styled'
 const Contacts = () => {
   const { light, dark } = theme;
   return (
-    <>
-      <Box $flex $fd="column" $gap="2rem" $pd="8rem 1rem">
-        <Box as={motion.div} $flex>
+      <Box $flex $bgColor={dark.fgColor} $fd="column" $w="100%" $gap="2rem" $pd="8rem 30rem">
+        <Box $flex >
           <FaTwitter  size={80} color='#00acee' />
           <Elink $italize href='https://x.com/kryptoiq' $color={light.fgColor} $size="lg">x.com/kryptoiq</Elink>
         </Box>
@@ -27,11 +26,7 @@ const Contacts = () => {
             <Elink $italize href='mailto:kryptoiq@gmail.com' $color={light.fgColor} $size="lg">kryptoiq@gmail.com</Elink>
           </div>
         </Box>
-        
-        
       </Box>
-    </>
-      
   )
 }
 

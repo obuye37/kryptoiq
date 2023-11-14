@@ -24,8 +24,8 @@ const Layout = ({ children, path}) => {
   return (
     <>
       <Navigation />
-      <Main>
-        <motion.div key={path}
+      <Main
+        key={path}
         variants={variants}
         initial="initialState"
         animate="animatedState"
@@ -34,7 +34,6 @@ const Layout = ({ children, path}) => {
           duration:0.75
         }}>
           {children}
-        </motion.div>
       </Main>
       <Footer />
     </>

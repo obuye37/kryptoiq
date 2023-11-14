@@ -24,9 +24,9 @@ const IndexPage = () => {
       </Box>
 
     {/* About Section */}
-    <Box $flex $bgImage={`${Abg}`} $w="100%" $ai='center' style={{position:'relative'}}>
+    <Box $flex $bgImage={`${Abg}`} $bgPos="top" $w="100%" $ai='center' style={{position:'relative'}}>
       <div style={{position:"absolute", background:'#000c', width:'100%', height:'100%'}}></div>
-      <Box $flex $fd="column" $pd="10rem" $ai='center' $gap="10px" $w="80%" $mg="auto" style={{zIndex: 1000}}>
+      <Box $flex $fd="column" $pd="8rem" $ai='center' $gap="10px" $w="80%" $mg="auto" style={{zIndex: 1000}}>
         <Heading $size='xxlg' $color='#eee'> Krypto <Text as='span' $color={dark.primary} $size="xxlg" weight={900}>IQ</Text></Heading>
         <Text $align="center" $size="lg" $color='#eee' $width="70%">We are here to help you make money while you are catching all the fun on this exciting crypto space</Text>
         <Button $large $size="md" $bgColor={dark.primary} $color='#111'> Learn More... </Button>
@@ -34,11 +34,11 @@ const IndexPage = () => {
     </Box>
 
       {/* Join Section */}
-      <Box $flex $pd="8rem" $ai="center" $bgColor="black" >
-        <Box>
-          <Text $align="center" $size="xlg" $color={light.primary}>Join Us &</Text>
-          <Heading $align="center" $color="#eee" $weight="900" $size='xxlg'>Boost your Crypto Knowledge</Heading>
-          <Box $flex $jc="center" $ai="center" $gap="10px">
+      <Box $flex $pd="6rem" $ai="center" $bgColor="black" >
+        <Box $pd="0 2rem 0 6rem " $w="100%">
+          <Text $align="right" $size="lg" $color={light.primary}>Join Us &</Text>
+          <Heading $align="right" $color="#eee" $weight="900" $size='xxlg'>Boost your Crypto Knowledge</Heading>
+          <Box $flex $jc="right" $ai="center" $gap="10px">
             <Text $size="md" $align="center" style={{borderBottom: `1px solid ${light.secondary}`,}}>follow </Text>
             <Icons $flex $ai="center">
               <Elink href="https://t.me/kryptoiq_official"><FaTelegram size={20} color="#eee" /></Elink>
@@ -46,8 +46,7 @@ const IndexPage = () => {
             </Icons>
           </Box>
         </Box>
-        
-        <Box>
+      <Box  $flex $jc="left" $w="70%">
           <Image $rot="15deg" $width="250px" $height="auto" src={BrainBulb}/>
         </Box>
       </Box>
