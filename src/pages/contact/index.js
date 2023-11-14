@@ -1,23 +1,13 @@
 import React from 'react'
-import { useTheme } from 'styled-components'
 import { FaEnvelope, FaTelegram, FaTwitter } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
-import Layout from '../../components/Layout'
-import { Elink, Box, Heading } from '../../components/Styled'
 
+import { Elink, Box, Heading, theme } from '../../components/Styled'
 
-// const Contacts = () => {
-//   return (
-//     <Layout>
-//       <ContactsPage />
-//     </Layout>
-//   )
-// }
 
 const Contacts = () => {
-  const themed = useTheme();
-  const { light, dark } = themed;
+  const { light, dark } = theme;
   return (
     <>
       <Box $flex $fd="column" $gap="2rem" $pd="8rem 1rem">

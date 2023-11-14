@@ -1,8 +1,4 @@
 import React from 'react'
-import { useTheme } from 'styled-components'
-
-
-import Layout from '../../components/Layout'
 import HeroImage from '../../images/iqBg.webp'
 import BrainBulb from '../../images/iqbrain.svg'
 
@@ -11,8 +7,7 @@ import { Box, Heading, Text, Button, Image, theme, Icons, Elink } from '../../co
 
 
 const About = () => {
-  const themed = useTheme();
-  const { light, dark } = themed;
+const { light, dark } = theme
   return (
       <>
         <Box $flex $bgImage={`${HeroImage}`} $w="100%" $ai='center' style={{position:'relative'}}>

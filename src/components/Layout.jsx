@@ -1,6 +1,5 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { motion } from 'framer-motion'
 
 import { Main, theme, } from './Styled'
 import Navigation from './Navigation'
@@ -21,12 +20,10 @@ const variants = {
 }
 
 const Layout = ({children}) => {
-  const {pathname} = window.location
   return (
     <ThemeProvider theme={theme}>
       <Navigation />
       <Main
-        key={pathname}
         variants={variants}
         initial="initialState"
         animate="animatedState"

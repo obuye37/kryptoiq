@@ -5,12 +5,9 @@ import { Box, Heading, Text, Button, Image, theme, Icons, Elink } from '../compo
 import BrainBulb from '../images/iqbrain.svg'
 import HeroImage from '../images/hero-img.svg'
 import Abg from '../images/iqBg.webp'
-import { useTheme } from "styled-components"
-
 
 const IndexPage = () => {
-  const themed = useTheme();
-  const { light, dark } = themed;
+  const { light, dark } = theme;
   return (
     <>
       <Box $flex $pd="8rem 5rem" $bgColor={light.bgColor} $w="100%">
